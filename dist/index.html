@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>U.S. State Capitals Quiz – Yew</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Trunk will compile Rust and inject the JS/WASM for us -->
+    
+<script type="module">
+import init, * as bindings from '/state-capitals-quiz-yew/state-capitals-quiz-yew.js';
+const wasm = await init({ module_or_path: '/state-capitals-quiz-yew/state-capitals-quiz-yew_bg.wasm' });
+
+
+window.wasmBindings = bindings;
+
+
+dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
+
+</script>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #1e3a8a; /* deep blue, like the Tkinter version */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+    </style>
+  <link rel="modulepreload" href="/state-capitals-quiz-yew/state-capitals-quiz-yew.js" crossorigin="anonymous" integrity="sha384-HeaCsZ24AY4F8KhG17HnNqBUs1rL7ja7StM/Isbazg3vF7P8n89BGJWvjNGxT0t5"><link rel="preload" href="/state-capitals-quiz-yew/state-capitals-quiz-yew_bg.wasm" crossorigin="anonymous" integrity="sha384-gzjbHGQRpwW3AIU8gS+QGS6oIiQ1vZhhs6mj9o29WoXrQjtFJxraxfr8eAn/HVoi" as="fetch" type="application/wasm"></head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
