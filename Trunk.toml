@@ -1,5 +1,0 @@
-[build]
-target = "index.html"
-public_url = "/state-capitals-quiz-yew/"
-filehash = false
-release = true
